@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+
+<div class="container-fluid">
+<div class="row">
+<div id="container1" class="col-xs-offset-2 col-xs-6 contain">
+
+<h3>Pika Kufitare: <%= doc.pikaKufitare %></h3>
+
+<h3>Hyrje (minuta)</h3> 
+	<p>Min: <%= doc.hyrjeMinMinuta %> - Max: <%= doc.hyrjeMaxMinuta %></p>
+
+<h3>Dalje (minuta)</h3>
+	<p>Min: <%= doc.daljeMinMinuta %> - Max: <%= doc.daljeMaxMinuta %></p>
+
+<h3>Kolona (metra) Hyrje</h3> 
+	<p>Min: <%= doc.hyrjeMinMetra %> - Max: <%= doc.hyrjeMaxMetra %></p>
+
+<h3>Kolona (metra) Dalje</h3> 
+    <p>Min: <%= doc.daljeMinMetra %> - Max: <%= doc.daljeMaxMetra %></p>
+
+</div><!--container-fliud end-->
+</div><!--row end-->
+</div><!--contain end-->
+
+<% include partials/footer %>

@@ -1,0 +1,108 @@
+<%- include partials/header %>
+
+ <div class="container-fluid contain">
+    <div class="row">
+    <div class="col-xs-offset-3 col-xs-6"> 
+<h3>Forma e ndyshimit të të dhënave të pikave kufitare</h3>
+<form class="form-horizontal" id="border-wait-form" method="POST" action="/qkmk/update/<%= doc._id %>">
+  <input type="hidden" id="datetime-now">
+  <h2>1</h2>
+  <div class="form-group form-style-group" id="group">
+    <label for="pikaKufitare" class="control-lable col-xs-3 gr"><p>Pika kufitare</p></label>
+    <div class="col-xs-4">
+    <select class="form-control" id="pikaKufitare" name="pikaKufitare">
+        <option value="<%= doc.pikaKufitare %>" selected selected hidden><%= doc.pikaKufitare %></option>
+        <option value="Vërmicë">Vërmicë</option>
+        <option value="Qafë e Prushit">Qafë e prushit</option>
+        <option value="Qafë e Morinës">Qafë e Morinës</option>
+        <option value="Kullë">Kullë</option>
+        <option value="Bërnjak">Bërnjak</option>
+        <option value="Jarinje">Jarinje</option>
+        <option value="Merdarë">Merdarë</option>
+        <option value="Mutivodë">Mutivodë</option>
+        <option value="Dheu i bardhë">Dheu i bardhë</option>
+        <option value="Muçibabë">Muçibabë</option>
+        <option value="Hani i Elezit">Hani i Elezit</option>
+        <option value="Glloboqicë">Glloboqicë</option>
+    </select>
+   </div>
+  </div>
+  <h2>2</h2>
+  <p class="gr">Hyrje</p>
+  <div class="form-group">
+    <label for="hyrjeMinMinuta" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59" class="form-control" id="hyrjeMinMinuta" name="hyrjeMinMinuta" value="<%= doc.hyrjeMinMinuta %>"></div>
+    <span> minuta</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="hyrjeMaxMinuta" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59" class="form-control" id="hyrjeMaxMinuta" name="hyrjeMaxMinuta" value="<%= doc.hyrjeMaxMinuta %>"></div>
+    <span> minuta</span>
+</div>
+  <p class="gr">Dalje</p>
+  <div class="form-group" id="group">
+    <label for="daljeMinMinuta" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59" class="form-control" id="daljeMinMinuta" name="daljeMinMinuta" value="<%= doc.daljeMinMinuta %>"></div>
+    <span> minuta</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="daljeMaxMinuta" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59"  class="form-control" id="daljeMaxMinuta" name="daljeMaxMinuta" value="<%= doc.daljeMaxMinuta %>"></div>
+    <span> minuta</span>
+  </div>
+
+  <h2>3</h2>
+  <p class="gr">Hyrje</p>
+  <div class="form-group" id="group">
+    <label for="hyrjeMinMetra" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="hyrjeMinMetra" name="hyrjeMinMetra" value="<%= doc.hyrjeMinMetra %>"></div>
+    <span> metra</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="hyrjeMaxMetra" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="hyrjeMaxMetra" name="hyrjeMaxMetra" value="<%= doc.hyrjeMaxMetra %>"></div>
+    <span> metra</span>
+  </div>
+   <p class="gr">Dalje</p>
+  <div class="form-group" id="group">
+    <label for="daljeMinMetra" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="daljeMinMetra" name="daljeMinMetra" value="<%= doc.daljeMinMetra %>"></div>
+    <span> metra</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="daljeMaxMetra" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="daljeMaxMetra" name="daljeMaxMetra" value="<%= doc.daljeMaxMetra %>"></div>
+    <span> metra</span>
+  </div>
+  <button type="submit" class="btn btn-default button col-xs-2">Ruaj</button>
+  <button type="reset" class="btn btn-default button col-xs-2">Fshij</button>
+</form> 
+</div>
+
+<%- include partials/footer %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

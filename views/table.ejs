@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>QKMK - Pikat Kufitare</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="js/highcharts/exporting.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-5"><a href="#popup1"><img src="PKK.jpg" width="800"></a></div>
+<div class="col-xs-offset-2 col-xs-5 link">
+<h3>Qendra Kombëtare për Menaxhim Kufitar (QKMK)</h3><br/>
+<table class="table table-striped">
+   <tr style="color: #26443c;" class="success">
+         <th>Pika Kufitare</th>
+         <th>Hyrje (minuta) </th>
+         <th>Dalje (minuta) </th>
+         <th>Kolona (metra) Hyrje</th>
+         <th>Kolona (metra) Dalje</th>
+    </tr>
+    <% docs.map(function(doc) {  %>
+    <tr>
+        <td><%= doc.pikaKufitare %></td>
+        <td><%= doc.hyrjeMinMinuta %> - <%= doc.hyrjeMaxMinuta %></td>
+        <td><%= doc.daljeMinMinuta %> - <%= doc.daljeMaxMinuta %></td>
+        <td><%= doc.hyrjeMinMetra %> - <%= doc.hyrjeMaxMetra %></td>
+        <td><%= doc.daljeMinMetra %> - <%= doc.daljeMaxMetra %></td>
+    </tr>
+   <% }) %>
+</table>
+</div>
+</div>
+</div><!--end container-->
+
+<div id="popup1" class="overlay">
+  <div class="popup">
+  	<h4></h4>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+     <div id="container" style="min-width: 310px; height: 500px; margin: 0 auto">
+     	<script type="text/javascript" src="js/charts.js"></script>
+     </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

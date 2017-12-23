@@ -1,0 +1,225 @@
+<% include partials/header %>
+
+    <div class="container-fluid contain">
+    <div class="row">
+    <div class="col-xs-offset-1 col-xs-6"> 
+<h3>Forma e regjistrimit të pikave kufitare</h3>
+<form class="form-horizontal" id="border-wait-form" method="POST" action="/qkmk/add">
+  <input type="hidden" id="updatedAt">
+  <h2>1</h2>
+  <div class="form-group form-style-group">
+    <label for="pikaKufitare" class="control-lable col-xs-3 gr"><p>Pika kufitare</p></label>
+    <div class="col-xs-4">
+    <select class="form-control" id="pikaKufitare" name="pikaKufitare">
+        <option value="" selected disabled hidden>Zgjedh pikën kufitare</option>
+        <option value="Vermice">Vërmicë</option>
+        <option value="Qafë e Prushit">Qafë e prushit</option>
+        <option value="Qafë e Morinës">Qafë e Morinës</option>
+        <option value="Kullë">Kullë</option>
+        <option value="Bërnjak">Bërnjak</option>
+        <option value="Jarinje">Jarinje</option>
+        <option value="Merdarë">Merdarë</option>
+        <option value="Mutivodë">Mutivodë</option>
+        <option value="Dheu i bardhë">Dheu i bardhë</option>
+        <option value="Muçibabë">Muçibabë</option>
+        <option value="Hani i Elezit">Hani i Elezit</option>
+        <option value="Glloboqicë">Glloboqicë</option>
+    </select>
+   </div>
+  </div>
+  <h2>2</h2>
+  <p class="gr">Hyrje</p>
+  <div class="form-group">
+    <label for="hyrjeMinMinuta" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59" class="form-control" id="hyrjeMinMinuta" name="hyrjeMinMinuta"></div>
+    <span> minuta</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="hyrjeMaxMinuta" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59" class="form-control" id="hyrjeMaxMinuta" name="hyrjeMaxMinuta"></div>
+    <span> minuta</span>
+</div>
+  <p class="gr">Dalje</p>
+  <div class="form-group" id="group">
+    <label for="daljeMinMinuta" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59" class="form-control" id="daljeMinMinuta" name="daljeMinMinuta"></div>
+    <span> minuta</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="daljeMaxMinuta" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" max="59"  class="form-control" id="daljeMaxMinuta" name="daljeMaxMinuta"></div>
+    <span> minuta</span>
+  </div>
+
+  <h2>3</h2>
+  <p class="gr">Hyrje</p>
+  <div class="form-group" id="group">
+    <label for="hyrjeMinMetra" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="hyrjeMinMetra" name="hyrjeMinMetra"></div>
+    <span> metra</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="hyrjeMaxMetra" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="hyrjeMaxMetra" name="hyrjeMaxMetra"></div>
+    <span> metra</span>
+  </div>
+   <p class="gr">Dalje</p>
+  <div class="form-group" id="group">
+    <label for="daljeMinMetra" class="control-lable col-xs-2 group">Minimum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="daljeMinMetra" name="daljeMinMetra"></div>
+    <span> metra</span>
+  </div>
+  <div class="form-group" id="group">
+    <label for="daljeMaxMetra" class="control-lable col-xs-2 group">Maximum</label>
+    <div class="col-xs-2">
+    <input type="number" min="0" class="form-control" id="daljeMaxMetra" name="daljeMaxMetra"></div>
+    <span> metra</span>
+  </div>
+  <button type="submit" class="btn btn-default button col-xs-2">Ruaj</button>
+  <button type="reset" class="btn btn-default button col-xs-2">Fshij</button>
+</form> 
+</div>
+
+<div class="col-xs-5 link">
+<h3>Të dhënat:</h3>
+<table style="border-color: #FFF; border-collapse: separate; border-spacing: 12px;">
+   <tr style="font-size: 16px;">
+         <th>Pika Kufitare </th>
+         <th>Hyrje (minuta) </th>
+         <th>Dalje (minuta) </th>
+         <th>Hyrje (metra) </th>
+         <th>Dalje (metra) </th>
+    </tr>
+    <% docs.map(function(doc) {  %>
+    <tr>
+        <td><%= doc.pikaKufitare %></td>
+        <td><%= doc.hyrjeMinMinuta %> - <%= doc.hyrjeMaxMinuta %></td>
+        <td><%= doc.daljeMinMinuta %> - <%= doc.daljeMaxMinuta %></td>
+        <td><%= doc.hyrjeMinMetra %> - <%= doc.hyrjeMaxMetra %></td>
+        <td><%= doc.daljeMinMetra %> - <%= doc.daljeMaxMetra %></td>
+        <td><a href="/qkmk/<%= doc._id %>">Show</a></td>
+        <td><a href="/qkmk/edit/<%= doc._id %>">Edit</a></td>
+        <td><a href="/qkmk/delete/<%= doc._id %>">Delete</a></td>
+    </tr>
+   <% }) %>
+</table>
+</div>
+</div>
+
+<hr>
+<div class="row">
+<div class="col-xs-5 link">
+
+<h3>Të dhënat:</h3>
+<table style="border-color: #FFF; border-collapse: separate; border-spacing: 12px;">
+   <tr style="font-size: 16px;">
+         <th>Magjistralja </th>
+         <th>Dëborë </th>
+         <th>Akullë </th>
+         <th>Mjegullë </th>
+         <th>Rrëshqitje Dheu </th>
+         <th>Kalueshmëria </th>
+    </tr>
+    <% docs.map(function(doc) {  %>
+    <tr>
+        <td><%= doc.magjistralja %></td>
+        <td><%= doc.debore %></td>
+        <td><%= doc.akull %></td>
+        <td><%= doc.mjegull %></td>
+        <td><%= doc.rreshqitjeDheu %></td>
+        <td><%= doc.kalueshmeria %></td>
+        <td><a href="/roads/<%= doc._id %>">Show</a></td>
+        <td><a href="/roads/edit/<%= doc._id %>">Edit</a></td>
+        <td><a href="/roads/delete/<%= doc._id %>">Delete</a></td>
+    </tr>
+   <% }) %>
+</table>
+</div>
+
+<div class="col-xs-offset-1 col-xs-6"> 
+<h3 class="group">Forma e regjistrimit të gjendjes së rrugëve</h3>
+<form class="form-horizontal group" id="border-wait-form" method="POST" action="/roads/add">
+  <input type="hidden" id="updatedAt">
+  <h2>1</h2>
+  <div class="form-group form-style-group group">
+    <label for="magjistralja" class="control-lable col-xs-3 group"><h5>Magjistralja</h5></label>
+    <div class="col-xs-4">
+    <select class="form-control" id="magjistralja" name="magjistralja">
+        <option value="" selected disabled hidden>Zgjedh magjistralen</option>
+        <option value="H. Elezit – Kaçanik">H. Elezit – Kaçanik</option>
+        <option value="Glloboqic – Fusha e Pajtimit">Glloboqic – Fusha e Pajtimit</option>
+        <option value="Dheu i Bardhë – Gjilanë">Dheu i Bardhë – Gjilanë</option>
+        <option value="Muqibabë – Gjilanë">Muqibabë – Gjilanë</option>
+        <option value="Pejë – Kullë ">Pejë – Kullë </option>
+        <option value="Gjakovë – Q.Morinë">Gjakovë – Q.Morinë</option>
+        <option value="Gjakovë -  Q.Prushë">Gjakovë -  Q.Prushë</option>
+        <option value="Prizren - Vërmicë">Prizren - Vërmicë</option>
+        <option value="Prishtinë - Mutivodë">Prishtinë - Mutivodë</option>
+        <option value="Podujevë - Merdarë">Podujevë - Merdarë</option>
+        <option value="Mitrovicë – Bërnjak">Mitrovicë – Bërnjak</option>
+        <option value="Mitrovicë - Jarinje">Mitrovicë - Jarinje</option>
+    </select>
+   </div>
+  </div>
+  <h2>2</h2>
+  <div class="form-group form-style-group" id="group"">
+    <label for="debore" class="control-lable col-xs-3 group"><h5>Dëborë</h5></label>
+    <div class="col-xs-2">
+      <select class="form-control" id="debore" name="debore">
+        <option value="JO" selected>JO</option>
+        <option value="PO">PO</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group form-style-group" id="group"">
+    <label for="akull" class="control-lable col-xs-3 group"><h5>Akullë</h5></label>
+    <div class="col-xs-2">
+      <select class="form-control" id="akull" name="akull">
+        <option value="JO" selected>JO</option>
+        <option value="PO">PO</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group form-style-group" id="group"">
+    <label for="mjegull" class="control-lable col-xs-3 group"><h5>Mjegullë</h5></label>
+    <div class="col-xs-2">
+      <select class="form-control" id="mjegull" name="mjegull">
+        <option value="JO" selected>JO</option>
+        <option value="PO">PO</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group form-style-group" id="group"">
+    <label for="rreshqitjeDheu" class="control-lable col-xs-3 group"><h5>Rrëshqitje Dheu</h5></label>
+    <div class="col-xs-2">
+      <select class="form-control" id="rreshqitjeDheu" name="rreshqitjeDheu">
+        <option value="JO" selected>JO</option>
+        <option value="PO">PO</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group form-style-group" id="group"">
+    <label for="kalueshmeria" class="control-lable col-xs-3 group"><h5>Kalueshmëria</h5></label>
+    <div class="col-xs-4">
+      <select class="form-control" id="kalueshmeria" name="kalueshmeria">
+        <option value="E kalueshme" selected>E kalueshme</option>
+        <option value="Pjesërisht e kalueshme">Pjesërisht e kalueshme</option>
+        <option value="E pakalueshme">E pakalueshme</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default button col-xs-2">Ruaj</button>
+  <button type="reset" class="btn btn-default button col-xs-2">Fshij</button>
+ </div>
+</div>
+
+<% include partials/footer %>
+
+

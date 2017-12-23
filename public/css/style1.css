@@ -1,0 +1,48 @@
+.container{
+	width:500px;
+	background: -webkit-linear-gradient(#0be2a5, #13513f);
+	color: #FFF;
+}
+p{
+	font-weight: bold;
+}
+h3 {
+	color:#26443c;
+	font-size: 22px;
+	font-weight: bold;
+}
+h2 {
+ overflow: hidden;
+ text-align: left;
+ color:#26443c;
+}
+h2:after {
+ background-color: #26443c;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 55%;
+}
+h2:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+#minimum, #maximum{
+	width:100px;
+	display: inline;
+}
+#pika-kufitare{
+	width:180px;
+	display: inline;
+}
+#group{
+	margin-left: 60px;
+}
+#button{
+	margin-left: 20px;
+	margin-top: 20px;
+	background-color: #19302a;
+	outline: 0;
+}
