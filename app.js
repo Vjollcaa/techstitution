@@ -37,20 +37,31 @@ app.use(bodyParser.urlencoded({extended: false}));
  var dateTimeNow = new Date();
 
 // Routs
-app.get('/', function(req, res) {
+
+app.get('/', function (req, res) {
 	 qkmk.find({}).toArray(function(err, docs) {
+		if(err) {
+			console.log(err);
+		}
+         res.render('index', {docs: docs});
+  });
+});
+
+app.get('/', function(req, res) {
+	 roads.find({}).toArray(function(err, docs) {
 		if(err) {
 			console.log(err);
 		}
 		  res.render('index', {docs: docs});
 	});
 });
+
 app.get('/qkmk', function(req, res) {
 	qkmk.find({}).toArray(function(err, docs) {
 		if(err) {
 			console.log(err);
 		}
-		  res.render('table', {docs: docs});
+		res.render('table', {docs: docs});
 	});
 });
 
