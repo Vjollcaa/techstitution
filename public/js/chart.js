@@ -1,27 +1,4 @@
-<% include partials/header %>
-
-<div class="container-fluid contain">
-<div class="row">
-<div id="container1" class="col-xs-4">
-
-<h3>Pika Kufitare: <%= doc.pikaKufitare %></h3>
-
-<h3>Hyrje (minuta)</h3> 
-	<p>Min: <%= doc.hyrjeMinMinuta %> - Max: <%= doc.hyrjeMaxMinuta %></p>
-
-<h3>Dalje (minuta)</h3>
-	<p>Min: <%= doc.daljeMinMinuta %> - Max: <%= doc.daljeMaxMinuta %></p>
-
-<h3>Kolona (metra) Hyrje</h3> 
-	<p>Min: <%= doc.hyrjeMinMetra %> - Max: <%= doc.hyrjeMaxMetra %></p>
-
-<h3>Kolona (metra) Dalje</h3> 
-    <p>Min: <%= doc.daljeMinMetra %> - Max: <%= doc.daljeMaxMetra %></p>
-</div>
-
-<div id="containerChart" class="col-xs-8" style="min-width: 310px; height: 400px; margin: 0 auto; margin-top: 50px;">
-<script type="text/javascript">
-	Highcharts.chart('containerChart', {
+Highcharts.chart('containerChart', {
     chart: {
         type: 'column'
     },
@@ -46,7 +23,7 @@
     tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -78,9 +55,3 @@
 
     }]
 });
-</script>
-</div>
-</div><!--row end-->
-</div><!--container-fliud end-->
-
-<% include partials/footer %>

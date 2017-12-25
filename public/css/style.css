@@ -2,6 +2,10 @@
 	background: -webkit-linear-gradient(#0be2a5, #13513f);
 	color: #FFF;
 }
+#container1 {
+	text-align: center;
+	margin-top: 20px;
+}
 p{
 	font-weight: bold;
 	font-size: 22px;
@@ -38,6 +42,9 @@ h2:after {
 .gr{
 	margin-left: 50px;
 }
+.link{
+	padding-top: 20px;
+}
 .link a {
 	color: #26443c;
 	text-decoration: none;
@@ -51,6 +58,13 @@ h2:after {
 	background-color: #19302a;
 	color: #FFF;
 	outline: 0;
+}
+.button a{
+	color:#FFF;
+}
+.button a:hover {
+	color: #26443c;
+	text-decoration: none;
 }
 .overlay {
   position: fixed;
@@ -109,7 +123,96 @@ h2:after {
     width: 70%;
   }
 }
-#container1{
-	margin-top: 100px;
-	text-align: center;
+.fade-in {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+/* Return-to-top arrow */
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+

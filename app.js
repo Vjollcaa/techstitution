@@ -47,12 +47,12 @@ app.get('/', function (req, res) {
   });
 });
 
-app.get('/', function(req, res) {
+app.get('/roads', function(req, res) {
 	 roads.find({}).toArray(function(err, docs) {
 		if(err) {
 			console.log(err);
 		}
-		  res.render('index', {docs: docs});
+		  res.render('roads', {docs: docs});
 	});
 });
 
@@ -112,7 +112,7 @@ app.post('/roads/add', function(req, res) {
                    if(err) {
                    	console.log(err);
                    }
-                   res.redirect("/");
+                   res.redirect("/roads");
 		          });
 });
 
@@ -165,7 +165,7 @@ app.post('/roads/update/:id', function(req, res) {
 		if(err) {
 			console.log(err);
 		}
-	res.redirect("/");
+	res.redirect("/roads");
    });
 });
 
@@ -183,9 +183,14 @@ app.get('/roads/delete/:id', function(req, res) {
 		if(err) {
 			console.log(err);
 		}
-	res.redirect("/");
+	res.redirect("/roads");
    });
 });
+/*app.get('/roads/', function(req, res) {
+
+	res.redirect("/roads");
+
+}); */
 
 app.listen(3001, function() {
 	console.log("App running at http://localhost:3001");
